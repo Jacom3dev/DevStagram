@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
@@ -20,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-})->name('home');
+Route::get('/',HomeController::class)->name('home');
 
 
 /* auth */
@@ -55,6 +55,10 @@ Route::post('upload', [ImageController::class,'store'])->name('image.store');
 /* likes */
 Route::post('post/{post}/likes',[LikeController::class,'store'])->name('post.likes.store');
 Route::delete('post/{post}/likes',[LikeController::class,'destroy'])->name('post.likes.destroy');
+
+/* follow */
+Route::post('{user:username}/follow',[FollowerController::class, 'store'])->name('user.follow');
+Route::delete('{user:username}/unfollow',[FollowerController::class, 'destroy'])->name('user.unfollow');
 
 
 

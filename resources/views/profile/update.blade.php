@@ -5,7 +5,7 @@
 @section('content')
 <div class="md:flex md:justify-center">
     <div class="md:w-1/2 bg-white shadow p-6">
-        <form action="{{route('profile.update')}}" method="POST" class="mt-10 md:mt-0">
+        <form action="{{route('profile.update')}}" enctype="multipart/form-data" method="POST" class="mt-10 md:mt-0">
             @csrf
             @method('PUT')
             <div class="mb-5">
@@ -39,7 +39,7 @@
                         id="image"
                         type="file"
                         name="image"
-                        class="border  w-full rounded-lg block pl-10 p-2.5  "
+                        class="border w-full rounded-lg block pl-10 p-2.5  "
                         accept=".jpg, .jpge, .png"
                     >
                 </div>

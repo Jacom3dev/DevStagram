@@ -33,7 +33,7 @@
                     </form>
                 @endif
                @endauth
-                <p class="font-bold">{{$post->likes()->count()}} <span class="font-normal">likes</span></p>
+                <p class="font-bold">{{$post->likes->count()}} <span class="font-normal">likes</span></p>
            </div>
            <div>
                 <p class="font-bold">{{$post->user->username}}</p>

@@ -15,7 +15,7 @@ class PostController extends Controller
     }
 
     public function index(User $user){
-        $posts = Post::where('user_id',$user->id)->paginate(20);
+        $posts = Post::where('user_id',$user->id)->latest()->paginate(20);
         return view('dashboard',[
             'user'=>$user,
             'posts' => $posts
@@ -23,7 +23,6 @@ class PostController extends Controller
     }
 
     public function create(){
-        
         return view('posts.create');
     }
 

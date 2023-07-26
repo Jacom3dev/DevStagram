@@ -21,7 +21,7 @@ ejecutar: composer install
 
 	**DB_DATABASE**=nombre_de_tu_base_de_datos 
 	**DB_USERNAME**=tu_usuario_de_mysql
-	 **DB_PASSWORD**=tu_contraseña_de_mysql
+	**DB_PASSWORD**=tu_contraseña_de_mysql
  
 4.  **Ejecutar migraciones:**
 ejecutar: php artisan migrate
